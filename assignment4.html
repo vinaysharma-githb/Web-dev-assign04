@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    const quizQuestions = [
+    {
+        question: "What is the primary function of HTML? (Structure or Style)",
+        answer: "structure"
+    },
+    {
+        question: "Which CSS property is used to change the text color?",
+        answer: "color"
+    },
+    {
+        question: "In JavaScript, what loop is best for iterating over an array by index? (for or while)",
+        answer: "for"
+    },
+    {
+        question: "What does 'DOM' stand for?",
+        answer: "document object model"
+    },
+    {
+        question: "What symbol ends a standard JavaScript statement? (; or .)",
+        answer: ";"
+    }
+];
+
+
+function startQuiz() {
+    let score = 0; 
+
+    alert("Welcome to the Beginner Web Dev Quiz! Click OK to start.");
+
+   
+    for (let i = 0; i < quizQuestions.length; i++) {
+        
+        
+        const currentQ = quizQuestions[i];
+
+      
+        let userAnswer = prompt(`Question ${i + 1}/${quizQuestions.length}: ${currentQ.question}`);
+        
+       
+        if (userAnswer === null) {
+            alert("Quiz cancelled. Thanks for playing!");
+            return; 
+        }
+        
+
+        let cleanedAnswer = userAnswer.toLowerCase().trim();
+
+       
+        if (cleanedAnswer === currentQ.answer) {
+            score++; 
+            alert("Correct! You earned a point.");
+        } else {
+            alert(`Incorrect. The correct answer was: ${currentQ.answer}`);
+        }
+    }
+
+
+    alert(`Quiz finished! Your final score is ${score} out of ${quizQuestions.length}.`);
+
+    console.log(`Final Score: ${score}/${quizQuestions.length}`);
+}
+
+startQuiz();
+</script>
+
+
+</head>
+
+<body>
+    
+</body>
+</html>
